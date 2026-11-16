@@ -117,6 +117,15 @@ esac
 
 
 # Determine the Java command to use to start the JVM.
+if [ -z "$JAVA_HOME" ] && "$darwin" ; then
+    if /usr/libexec/java_home >/dev/null 2>&1 ; then
+        JAVA_HOME=$( /usr/libexec/java_home )
+    elif [ -x "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ] ; then
+        JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+    elif [ -x "$HOME/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ] ; then
+        JAVA_HOME="$HOME/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+    fi
+fi
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
         # IBM's JDK on AIX uses strange locations for the executables

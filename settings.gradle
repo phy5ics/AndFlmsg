@@ -22,4 +22,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = 'AndFlmsg'
-include(':andFlmsg')
+include(':app')
+project(':app').projectDir = file('andFlmsg')
