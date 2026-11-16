@@ -120,6 +120,8 @@ esac
 if [ -z "$JAVA_HOME" ] && "$darwin" ; then
     if /usr/libexec/java_home >/dev/null 2>&1 ; then
         JAVA_HOME=$( /usr/libexec/java_home )
+    elif [ -x "$HOME/Library/Java/JavaVirtualMachines/jdk-21.0.13+9/Contents/Home/bin/java" ] ; then
+        JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/jdk-21.0.13+9/Contents/Home"
     elif [ -x "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ] ; then
         JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
     elif [ -x "$HOME/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ] ; then
