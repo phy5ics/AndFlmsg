@@ -19,8 +19,7 @@ import android.app.Application;
         mailTo = "vk2eta@gmail.com",
         customReportContent = {ReportField.ANDROID_VERSION, ReportField.PHONE_MODEL, ReportField.CUSTOM_DATA, ReportField.STACK_TRACE, ReportField.LOGCAT},
         mode = ReportingInteractionMode.TOAST,
-        forceCloseDialogAfterToast = true, // optional, default false
-        resToastText = R.string.txt_crash_toast_text)
+        forceCloseDialogAfterToast = true)
 
 
 public class AndFlmsgDebug extends Application {
@@ -30,6 +29,9 @@ public class AndFlmsgDebug extends Application {
     public void onCreate() {
         // Initialization of ACRA error reporting
         super.onCreate();
+        ACRAConfiguration config = ACRA.getNewDefaultConfig(this);
+        config.setResToastText(R.string.txt_crash_toast_text);
+        ACRA.setConfig(config);
         ACRA.init(this);
     }
 

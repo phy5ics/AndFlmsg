@@ -8,6 +8,10 @@
 /build
 /captures
 /import-summary.txt
+/andFlmsg/.cxx
+/andFlmsg/.externalNativeBuild
+/andFlmsg/build
+/andFlmsg/*.iml
 /andFlmsg_Head_CPP120/.externalNativeBuild
 /andFlmsg_Head_CPP120/build
 /andFlmsg_Head_CPP120/*.iml
